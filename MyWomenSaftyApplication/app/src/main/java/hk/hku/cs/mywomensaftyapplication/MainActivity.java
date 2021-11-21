@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        result = findViewById(R.id.textView);
+        result = findViewById(R.id.locMsg);
 
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onLocationChanged(@NonNull Location loc) {
             locationString = loc.getLatitude() + ", " + loc.getLongitude();
+            result.setText(locationString);
 //            result.setText(loc.getLongitude() + ", " + loc.getLatitude());
         }
     }
